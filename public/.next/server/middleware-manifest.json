@@ -1,0 +1,67 @@
+{
+  "version": 3,
+  "middleware": {},
+  "functions": {
+    "/api/edit/route": {
+      "files": [
+        "server/server-reference-manifest.js",
+        "server/app/api/edit/route_client-reference-manifest.js",
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/next-font-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/edge-chunks/835.js",
+        "server/app/api/edit/route.js"
+      ],
+      "name": "app/api/edit/route",
+      "page": "/api/edit/route",
+      "matchers": [
+        {
+          "regexp": "^/api/edit$",
+          "originalSource": "/api/edit"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "TpSIfHGyp43EkZgzql_9l",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "PKgE+2Dw//Ir4d90WK9gpZNpaayWa4eVN0L8Ln2Lz1g=",
+        "__NEXT_PREVIEW_MODE_ID": "873f0f8e3a170c93deb514d2a938b5a8",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "95f62b6dda1731084df17deb35487e2e55ab2fcdc0c039ea5e556ee9ff61e3e6",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "0b7ace642340765d0469b0e7f5bfab15d31c5f57f706a6e92035348f63b9b74b"
+      }
+    },
+    "/api/stream/route": {
+      "files": [
+        "server/server-reference-manifest.js",
+        "server/app/api/stream/route_client-reference-manifest.js",
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/next-font-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/edge-chunks/835.js",
+        "server/app/api/stream/route.js"
+      ],
+      "name": "app/api/stream/route",
+      "page": "/api/stream/route",
+      "matchers": [
+        {
+          "regexp": "^/api/stream$",
+          "originalSource": "/api/stream"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "TpSIfHGyp43EkZgzql_9l",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "PKgE+2Dw//Ir4d90WK9gpZNpaayWa4eVN0L8Ln2Lz1g=",
+        "__NEXT_PREVIEW_MODE_ID": "873f0f8e3a170c93deb514d2a938b5a8",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "95f62b6dda1731084df17deb35487e2e55ab2fcdc0c039ea5e556ee9ff61e3e6",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "0b7ace642340765d0469b0e7f5bfab15d31c5f57f706a6e92035348f63b9b74b"
+      }
+    }
+  },
+  "sortedMiddleware": []
+}
