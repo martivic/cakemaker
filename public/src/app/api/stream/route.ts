@@ -25,7 +25,22 @@ export async function POST(request: NextRequest) {
     "comic-panel": "Create a single-page comic of 4–6 panels that tells a complete, self-contained story featuring the subject(s) of the original image as they discover an invitation to Build Hour Executive Summit 2025,  arrive in San Francisco amid iconic city sights, dive into the summit's demos by listening to an engineer who is sharing his terminal (it should say: import OpenAI from \"openai\";) who has a speech bubble with the OpenAI logo in it, and conclude the adventure by wearing an I <3 AGI shirt and making an AI pun (e.g. referencs to transformer, model, embeddings, fine tuning, GPT, tokens, positive reinforcement, prompt or AI) —keeping all narration and dialogue concise enough to fit comfortably within that single page.",
   };
   const arrayBuffer = await image.arrayBuffer();
-  const base64 = Buffer.from(arrayBuffer).toString("base64");
+  //const base64 = Buffer.from(arrayBuffer).toString("base64");
+ 
+  function base64FromArrayBuffer(buffer: ArrayBuffer) {
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  const chunkSize = 0x8000;
+
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+  }
+
+  return globalThis.btoa(binary);
+}
+
+const base64 = base64FromArrayBuffer(arrayBuffer);
+ 
   const dataUrl = `data:${image.type};base64,${base64}`;
   const mappedPrompt = modifierPrompts[modifier]
   ? `${modifierPrompts[modifier]}. Maintain the original composition and subject.`
@@ -65,7 +80,8 @@ export async function POST(request: NextRequest) {
 
   const { readable, writable } = new TransformStream();
   const writer = writable.getWriter();
-  (async () => {
+
+  /*(async () => {
     for await (const event of openaiStream) {
       if (typeof event !== "object" || !event.type) continue;
       if (event.type === "response.image_generation_call.partial_image") {
@@ -84,10 +100,44 @@ export async function POST(request: NextRequest) {
       }
     }
     await writer.close();
-  })();
+  })();*/
 
-  return new NextResponse(readable, {
+  (async () => {
+  try {
+    for await (const event of openaiStream) {
+      if (typeof event !== "object" || !event.type) continue;
+
+      if (event.type === "response.image_generation_call.partial_image") {
+        const partialId = (event as any).item_id || (event as any).id;
+        console.log("stream partial image", partialId);
+
+        const url = `data:image/png;base64,${(event as any).partial_image_b64}`;
+        await writer.write(JSON.stringify({ type: "partial", url }) + "\n");
+
+      } else if (event.type === "response.image_generation_call.completed") {
+        const id = (event as any).item_id || (event as any).id;
+        console.log("stream final image with id:", id);
+
+        await writer.write(JSON.stringify({ type: "final", id }) + "\n");
+      }
+    }
+
+    await writer.close();
+  } catch (err) {
+    console.error("OpenAI stream error:", err);
+    try {
+      await writer.abort(err as any);
+    } catch {}
+  }
+})();
+
+return new NextResponse(readable, {
+  headers: { "Content-Type": "application/x-ndjson", "Cache-Control": "no-cache" },
+});
+
+
+  /*return new NextResponse(readable, {
     headers: { "Content-Type": "application/json", "Cache-Control": "no-cache" },
-  });
+  });*/
 }
 
