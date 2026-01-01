@@ -1,0 +1,16 @@
+{
+  "name": "cakemakerai",
+"short_name": "cakemakerai",
+"scope": "/",
+"background_color": "#B71C1C",
+"description": "Generate cake recipes and designs with AI",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [{
+  "src": "public/icons/icon_cake192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
+  "theme_color": "#B71C1C"
+}
