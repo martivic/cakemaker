@@ -11,7 +11,6 @@
         "server/next-font-manifest.js",
         "server/interception-route-rewrite-manifest.js",
         "server/edge-runtime-webpack.js",
-        "server/edge-chunks/835.js",
         "server/app/api/edit/route.js"
       ],
       "name": "app/api/edit/route",
@@ -25,41 +24,11 @@
       "wasm": [],
       "assets": [],
       "env": {
-        "__NEXT_BUILD_ID": "lWK-KS3-pqisuEMow9ewx",
+        "__NEXT_BUILD_ID": "Bw7qKxso0VGUBKK0VTBSo",
         "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "PKgE+2Dw//Ir4d90WK9gpZNpaayWa4eVN0L8Ln2Lz1g=",
-        "__NEXT_PREVIEW_MODE_ID": "19103e845716f049df1bf3f9d5bd4bc3",
-        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "8da3eedb38dee60a3dd73b71ab3c362408607c067a210656bb70e846773a0b20",
-        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "964ef1cfb15c02d931b31de022ce12f8362e19400a590c21e935f17dd09cefa1"
-      }
-    },
-    "/api/stream/route": {
-      "files": [
-        "server/server-reference-manifest.js",
-        "server/app/api/stream/route_client-reference-manifest.js",
-        "server/middleware-build-manifest.js",
-        "server/middleware-react-loadable-manifest.js",
-        "server/next-font-manifest.js",
-        "server/interception-route-rewrite-manifest.js",
-        "server/edge-runtime-webpack.js",
-        "server/edge-chunks/835.js",
-        "server/app/api/stream/route.js"
-      ],
-      "name": "app/api/stream/route",
-      "page": "/api/stream/route",
-      "matchers": [
-        {
-          "regexp": "^/api/stream$",
-          "originalSource": "/api/stream"
-        }
-      ],
-      "wasm": [],
-      "assets": [],
-      "env": {
-        "__NEXT_BUILD_ID": "lWK-KS3-pqisuEMow9ewx",
-        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "PKgE+2Dw//Ir4d90WK9gpZNpaayWa4eVN0L8Ln2Lz1g=",
-        "__NEXT_PREVIEW_MODE_ID": "19103e845716f049df1bf3f9d5bd4bc3",
-        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "8da3eedb38dee60a3dd73b71ab3c362408607c067a210656bb70e846773a0b20",
-        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "964ef1cfb15c02d931b31de022ce12f8362e19400a590c21e935f17dd09cefa1"
+        "__NEXT_PREVIEW_MODE_ID": "57a7613b3c52dc648075eb8686f54e39",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "71069fb47b2f6d0d0336931769e135e502ab9594630b1644930921d269323a7e",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "3ba9021afb7c60d9511eccc447a9564804fae134091494657c979e5e79d32da1"
       }
     }
   },

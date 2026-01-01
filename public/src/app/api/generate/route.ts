@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import OpenAI from "openai";
-export const maxDuration = 350;
+export const maxDuration = 299;
 
 
 const client = new OpenAI();
