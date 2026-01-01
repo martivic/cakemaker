@@ -3,7 +3,7 @@ import OpenAI from "openai";
 
 const client = new OpenAI();
 
-export const runtime = "edge";
+export const runtime = 'nodejs' // "edge";
 
 export async function POST(request: NextRequest) {
   const formData = await request.formData();
