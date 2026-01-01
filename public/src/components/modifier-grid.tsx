@@ -49,7 +49,7 @@ const modifiers: Modifier[] = [
   { id: "knitted-cozy-scene", label: "Knitted Cozy Scene", icon: Coffee },
   { id: "mission-patch", label: "Mission Patch", icon: Award },
   { id: "japanese-anime-movie-poster", label: "Japanese Anime Movie Poster", icon: Clapperboard },
-  { id: "80s-cave", label: "80s Tech Cave", icon: Cpu },
+  { id: "80s-cave", label: "Inside Layered Cake", icon: Cpu },
 ]
 
 export default function ModifierGrid({ selectedModifiers, onToggle, maxSelections }: ModifierGridProps) {

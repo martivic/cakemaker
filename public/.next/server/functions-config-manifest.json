@@ -1,10 +1,10 @@
 {
   "version": 1,
   "functions": {
-    "/api/edit": {},
     "/api/generate": {
       "maxDuration": 299
     },
+    "/api/edit": {},
     "/api/stream": {}
   }
 }
