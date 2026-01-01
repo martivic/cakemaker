@@ -8,8 +8,8 @@ export default function Home() {
       <div className="mx-auto max-w-4xl">
         <h1 className="mb-6">
           <img
-            src="/OpenAI_Frontiers-2025.svg"
-            alt="OpenAI Frontiers 2025"
+            src="/cakemakerai.svg"
+            alt="CakeMakerAI"
             className="mx-auto block h-[8.45rem]"
           />
         </h1>

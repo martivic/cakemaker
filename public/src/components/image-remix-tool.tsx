@@ -254,7 +254,7 @@ export default function ImageRemixTool() {
       {error && <ErrorMessage message={error} onDismiss={() => setError(null)} />}
 
       <section>
-        <h2 className="mb-4 text-xl font-semibold text-gray-800">Upload Your Image</h2>
+        <h2 className="mb-4 text-xl font-semibold text-gray-800">Upload Your your Image</h2>
         <ImageUploader onImageUpload={handleImageUpload} imagePreview={imagePreview} />
       </section>
 
