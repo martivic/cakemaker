@@ -2,9 +2,9 @@
   "version": 1,
   "functions": {
     "/api/edit": {},
-    "/api/stream": {},
     "/api/generate": {
       "maxDuration": 299
-    }
+    },
+    "/api/stream": {}
   }
 }
